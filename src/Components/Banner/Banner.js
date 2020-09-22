@@ -6,6 +6,7 @@ const baseURL = "https://image.tmdb.org/t/p/original/";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  let over = "";
   useEffect(() => {
     async function getData() {
       const data = await axios.get(request.fetchNetflixOriginals);
@@ -22,6 +23,14 @@ function Banner() {
     }
     getData();
   }, []);
+
+  if (movie?.overview) {
+    if (movie?.overview.length > 350) {
+      over = movie?.overview.substr(0, 250) + "...";
+    } else {
+      over = movie?.overview;
+    }
+  }
 
   return (
     <header
@@ -40,7 +49,7 @@ function Banner() {
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        <h1 className="banner__description">{movie?.overview}</h1>
+        <h1 className="banner__description">{over}</h1>
       </div>
       <div className="banner__fadeBottom" />
     </header>

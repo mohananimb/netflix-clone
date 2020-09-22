@@ -1,0 +1,36 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.right__corner {
+  display: flex;
+  align-items: center;
+}
+
+.right__corner > input {
+  height: 25px;
+  background: #111;
+  border: 1px solid #fff;
+  padding: 5px;
+  color: #fff;
+}
+.background__black {
+  background-color: #111;
+}
+
+.netflix__logo {
+  height: 50px;
+}
+
+.profile__logo {
+  height: 50px;
+  margin-left: 10px;
+}
